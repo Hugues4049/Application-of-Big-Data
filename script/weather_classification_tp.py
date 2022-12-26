@@ -124,4 +124,5 @@ plt.show()
 
 #Create output file
 output = pd.DataFrame({'image_name':image, 'prediction_label':pred})
-output.to_csv('Prediction_output.csv')
+output.to_csv('Prediction_output{}.csv'.format(pd.datetime.now().strftime("%Y-%m-%d %Hh%Mm%Ss"))) 
+
