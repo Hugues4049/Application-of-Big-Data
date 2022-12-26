@@ -3,7 +3,7 @@ Industrialize a Datascience model through containerization <br />
 
 
 ## TO DO
-   [ ] Transform notebook to script python <br /> -> Aubain
+   [ ] Transform notebook to script python <br /> -> Aicha
    [ ] Create DockerFile with require dependencies <br /> -> Arthur 
    [ ] A volume mapping on an input directory in the local filesyste <br /> ?
    [ ] A volume mapping on an output directoryin the local filesystem <br /> ?
