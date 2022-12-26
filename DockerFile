@@ -1,0 +1,14 @@
+FROM alpine:latest
+
+#Create a directory inside my container and put myself in
+RUN mkdir -p  /home/app
+WORKDIR /home/app
+
+# Copy current folder files to /home/app
+COPY ..
+
+#For install all the requirements
+RUN pip install -r requirements.txt
+
+
+RUN python3 ./script/weather_classification_tp.py
