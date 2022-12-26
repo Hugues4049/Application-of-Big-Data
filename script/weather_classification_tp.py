@@ -111,6 +111,7 @@ for i, im in enumerate(images):
 
     # Make Prediction
     pred = class_names[list(preds)[i]]
+    print(pred)
     
     # Show Prediction
     plt.subplot(5,5,i+1)
@@ -120,3 +121,7 @@ for i, im in enumerate(images):
 plt.tight_layout()
 plt.show()
 
+
+#Create output file
+output = pd.DataFrame({'image_name':image, 'prediction_label':pred})
+output.to_csv('Prediction_output.csv')
