@@ -10,5 +10,5 @@ Industrialize a Datascience model through containerization <br />
    [ ] A volume mapping on an output directoryin the local filesystem <br /> 
    [ ] At "docker run" command: <br />  -> Aicha
         * Python script should run <br />  
-        * Load every images in input directory and make predictions <br />
+        * Load every images in input directory and make predictions <br /> -> Aicha
         * Finallyprovide a CSV file (with timestamp in filename) in output directory with "image_name,prediction_label" as columns <br />
