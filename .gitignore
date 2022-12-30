@@ -1,3 +1,5 @@
 .vscode
 .DS_Store
 data/ResNet152V2-Weather-Classification-03.h5
+/data/ResNet152V2-Weather-Classification-01.h5
+.ipynb_checkpoints
