@@ -64,16 +64,17 @@ if __name__== "__main__":
 
     #change working directory
     pathhh= os.getcwd()
-    os.chdir(pathhh+"/Application-of-Big-Data")
+    os.chdir(pathhh)
     
     # Cateories
     class_names = {0: 'cloudy', 1: 'foggy', 2: 'rainy', 3: 'shine', 4: 'sunrise'}
     # Load images
-    image_paths = sorted(glob('./data/*.jpg'))
+    image_paths = sorted(glob('/home/app/data_inputs/*.jpg'))
+    print(f"Total Number of Images : {len(image_paths)}")
     images = load_data(image_paths)
 
     # Load model
-    model_v3 = load_model('./data/ResNet152V2-Weather-Classification-01.h5')
+    model_v3 = load_model('./ResNet152V2-Weather-Classification-03.h5')
 
     # Make Predictions
     preds = np.argmax(model_v3.predict(images), axis=-1)
@@ -86,5 +87,5 @@ if __name__== "__main__":
 
     #Create output file
     output = pd.DataFrame({'image_name':image_name, 'prediction_label':pred})
-    output.to_csv('./output/Prediction_output{}.csv'.format(pd.datetime.now().strftime("%Y-%m-%d %Hh%Mm%Ss")),index=False) 
+    output.to_csv('/home/app/data_outputs/Prediction_output{}.csv'.format(pd.datetime.now().strftime("%Y-%m-%d %Hh%Mm%Ss")),index=False) 
 
