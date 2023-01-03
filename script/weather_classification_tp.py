@@ -70,6 +70,7 @@ if __name__== "__main__":
     class_names = {0: 'cloudy', 1: 'foggy', 2: 'rainy', 3: 'shine', 4: 'sunrise'}
     # Load images
     image_paths = sorted(glob('/home/app/data_inputs/*.jpg'))
+    print(f"Total Number of Images : {len(image_paths)}")
     images = load_data(image_paths)
 
     # Load model
@@ -86,5 +87,5 @@ if __name__== "__main__":
 
     #Create output file
     output = pd.DataFrame({'image_name':image_name, 'prediction_label':pred})
-    output.to_csv('./home/app/data_outputs/Prediction_output{}.csv'.format(pd.datetime.now().strftime("%Y-%m-%d %Hh%Mm%Ss")),index=False) 
+    output.to_csv('/home/app/data_outputs/Prediction_output{}.csv'.format(pd.datetime.now().strftime("%Y-%m-%d %Hh%Mm%Ss")),index=False) 
 
