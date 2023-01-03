@@ -1,6 +1,9 @@
 # Application-of-Big-Data
-## Industrialize a Datascience model through containerization <br />
+# Industrialize a Datascience model through containerization <br />
+## Comment ça marche?
+   Ce projet est concu dans le but d'industrialiser un modèle Datascience par la conteneurisation. Docker ici utilisé pour la conteneurisation  fournit un modèle de déploiement basé sur les images(Ubuntu:focal dans notre cas) pour faciliter le partage d'un ensemble de prediction du temps ainsi que toutes les dépendances du modèle dans plusieurs environnements. Il automatise le déploiement des ensembles combinés de processus qui la composent dans l'environnement du conteneur. Il permet un déploiement rapide et un contrôle des versions et de leur distribution. <br />
 
+   Des données stockées en local et mapper par les volumes dans le conteneur, le modele de prediction ResNet152V2 procède à la prédiction des images qu'il renvoit en sortie un fichier CSV précisant la prediction du temps représenté sur l'image et le sauvegarde de nouveau dans un dossier local via un volume créer dans le conteneur.
 
 ## Opérations faites dans le Script python:
    Dans le script python, nous avons:
@@ -13,8 +16,8 @@
       -Associer à chaque image un nom à partir de son chemain d'accès
 
       -Faire resortir le resultat des prédiction dans un dataframe avec en colonnes le nom des images et le label de la prediction associée
-      
-      -Convertir le dataframe en fichier CSV en temps réel qui va être télécharger grâce au mappage dans un dossier local.<br />
+
+      -Convertir le dataframe en fichier CSV en temps réel qui va être télécharger grâce au mappage dans un dossier local. <br />
 
 ## Opérations faites dans le Dockerfile:
    Dans le Dockerfile, il a été question de trouver une image qui est en adéquation avec notre python (Ubuntu:focal pour python3.9)
@@ -32,7 +35,8 @@
          "docker ps -a" qui vous donnera l'ID du containeur, le nom de l'image le status de l'image la date de création etc...
       -Vous pouver supprimer les containeur avec 
          'docker system prune'
-      -En suite lancer le containeur en lui demandant de mapper ses dossier (data_inputs et data_outputs) avec les dossier locaux pour ensuite excécuter le script python avec la commande 
+## L'exéution:
+      -Pour lancer le containeur en lui demandant de mapper ses dossier (data_inputs et data_outputs) avec les dossier locaux pour ensuite excécuter le script python avec la commande 
          "docker  run -v /home/roland/Bureau/app_data/data_inputs:/home/app/data_inputs -v /home/roland/Bureau/app_data/data_outputs:/home/app/data_outputs  -i imageprediction" 
       NB: "/home/roland/Bureau/app_data/data_inputs:/home/app/data_inputs" est le chemin absolu du dossier contenant les images en local
       -Lister les volumes créer avec 
