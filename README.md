@@ -5,17 +5,25 @@
 ## Opérations faites dans le Script python:
    Dans le script python, nous avons:
       -Supprimer les lignes de code pour la visualisation (pas utiles)
+
       -Introduit le chemain vers la source de données dans le conteneur (/home/app/data_inputs/*.jpg')
+
       -Charger le model resnet à partir de git lfs
+
       -Associer à chaque image un nom à partir de son chemain d'accès
+
       -Faire resortir le resultat des prédiction dans un dataframe avec en colonnes le nom des images et le label de la prediction associée
+      
       -Convertir le dataframe en fichier CSV en temps réel qui va être télécharger grâce au mappage dans un dossier local.<br />
 
 ## Opérations faites dans le Dockerfile:
    Dans le Dockerfile, il a été question de trouver une image qui est en adéquation avec notre python (Ubuntu:focal pour python3.9)
    Copier le script python, les requirements et le modèle Resnet15 dans le containeur car seul eux devront être utiliser.
+
       -Creer deux dossier data_inputs et data_outputs dans le containeur pour les mapper avec les volumes créer en local
+
       -Installer python et pip dans le containeur
+
       -Modifier la commande d'entrer du conaineur (CMD ["python3","weather_classification_tp.py"])
 
       -Builder notre image avec la commande  
