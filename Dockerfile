@@ -23,6 +23,6 @@ COPY /data/ResNet152V2-Weather-Classification-03.h5 .
 #For install all the requirements
 RUN apt-get -y install python3-pip
 RUN pip install -r requirements.txt
-RUN pwd && ls
+RUN pwd && ls -R
 
 CMD ["python3","weather_classification_tp.py"]
