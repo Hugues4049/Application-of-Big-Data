@@ -73,7 +73,7 @@ if __name__== "__main__":
     images = load_data(image_paths)
 
     # Load model
-    model_v3 = load_model('./data/ResNet152V2-Weather-Classification-01.h5')
+    model_v3 = load_model('./data/ResNet152V2-Weather-Classification-03.h5')
 
     # Make Predictions
     preds = np.argmax(model_v3.predict(images), axis=-1)
