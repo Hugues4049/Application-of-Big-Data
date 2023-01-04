@@ -35,7 +35,7 @@
          "docker ps -a" qui vous donnera l'ID du containeur, le nom de l'image le status de l'image la date de création etc...
       -Vous pouver supprimer les containeur avec 
          'docker system prune'
-## L'exéution:
+## L'exécution:
       -Pour lancer le containeur en lui demandant de mapper ses dossier (data_inputs et data_outputs) avec les dossier locaux pour ensuite excécuter le script python avec la commande 
          "docker  run -v /home/roland/Bureau/app_data/data_inputs:/home/app/data_inputs -v /home/roland/Bureau/app_data/data_outputs:/home/app/data_outputs  -i imageprediction" 
       NB: "/home/roland/Bureau/app_data/data_inputs:/home/app/data_inputs" est le chemin absolu du dossier contenant les images en local
