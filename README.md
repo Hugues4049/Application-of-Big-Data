@@ -1,5 +1,5 @@
 # Application-of-Big-Data
-# Industrialize a Datascience model through containerization <br />
+# Industrialisation d'un model de data science via conteneurisation docker <br />
 ## Comment ça marche?
    Ce projet est concu dans le but d'industrialiser un modèle Datascience par la conteneurisation. Docker ici utilisé pour la conteneurisation  fournit un modèle de déploiement basé sur les images(Ubuntu:focal dans notre cas) pour faciliter le partage d'un ensemble de prediction du temps ainsi que toutes les dépendances du modèle dans plusieurs environnements. Il automatise le déploiement des ensembles combinés de processus qui la composent dans l'environnement du conteneur. Il permet un déploiement rapide et un contrôle des versions et de leur distribution. <br />
 
